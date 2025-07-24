@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import {
   ImageBackground,
   Dimensions,
