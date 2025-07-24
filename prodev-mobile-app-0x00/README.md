@@ -1,50 +1,50 @@
-# Welcome to your Expo app 👋
+🔄 npm run reset-project
+This command is used to reset your Expo project to a clean state. It helps resolve issues like broken builds, unexpected errors, or stale caches.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+🔧 What It Does
+When you run:
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
+bash
+Copy
+Edit
 npm run reset-project
-```
+It typically performs the following actions (based on the configured script):
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Clears Metro bundler cache
 
-## Learn more
+Clears watchman cache (if applicable)
 
-To learn more about developing your project with Expo, look at the following resources:
+Deletes node_modules folder
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Deletes package-lock.json
 
-## Join the community
+Reinstalls all dependencies
 
-Join our community of developers creating universal apps.
+Restarts the Expo server with a fresh cache
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This is helpful when your app behaves unexpectedly or fails to start due to caching issues.
+
+✅ What You Will Observe
+A fresh install of all packages
+
+Expo will start a new development server
+
+Your project loads cleanly on the device/emulator
+
+Any previous errors caused by stale code or dependencies may be resolved
+
+🧼 Example Script in package.json
+If you don't have it yet, you can add this in your package.json:
+
+json
+Copy
+Edit
+"scripts": {
+  "reset-project": "rm -rf node_modules package-lock.json && npm install && expo start -c"
+}
+Note: For Windows, use the equivalent command:
+
+json
+Copy
+Edit
+"reset-project": "rd /s /q node_modules && del package-lock.json && npm install && expo start -c"
